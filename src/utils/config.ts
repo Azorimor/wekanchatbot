@@ -14,6 +14,7 @@ switch (process.env.NODE_ENV) {
 }
 dotenv.config({ path: path });
 
+export const PROD = process.env.NODE_ENV === "production";
 export const APP_ID = process.env.APP_ID || "WekanChatBot";
 export const LOG_LEVEL = process.env.LOG_LEVEL || "debug";
 export const PORT = process.env.PORT || 3000;
