@@ -1,5 +1,5 @@
-const world = 'world';
+const world = "world";
 
-export function hello(world = 'testworl'): string {
+export function hello(world = "testworl"): string {
   return `Hello ${world}! `;
 }
