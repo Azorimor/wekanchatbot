@@ -1,8 +1,9 @@
 import express, { Application } from "express";
 import cors from "cors";
 import helmet from "helmet";
-import logger, { expressLogger, expressErrorLogger } from "./utils/logger";
+import { expressLogger, expressErrorLogger } from "./utils/logger";
 import { LOG_LEVEL } from "./utils/config";
+import mainRouter from "./router/main.router";
 
 const app: Application = express();
 
@@ -16,9 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // use router
-app.get("/", (req, res) => {
-  res.json({ info: "Chatbot started.", header: req.headers });
-});
+app.use(mainRouter);
 
 app.use(expressErrorLogger);
 
