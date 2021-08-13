@@ -1,0 +1,18 @@
+version: "3.9"
+# To get the docker-compose for wekan you can visit https://github.com/wekan/wekan/blob/master/docker-compose.yml
+# Command: curl -o docker-compose.wekan.yml https://raw.githubusercontent.com/wekan/wekan/master/docker-compose.yml
+services: 
+  # This mongodb container is used for the chatbot
+  # Connectionuri: mongodb://admin:securePassword@localhost:27017/wekanbot
+  mongodb:
+    image: mongo
+    ports: 
+      - 27017:27017
+    volumes: 
+      - mongodb:/data/db
+    environment: 
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: securePassword
+
+volumes: 
+  mongodb:
