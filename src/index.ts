@@ -1,5 +1,5 @@
-const world = "world";
+import app from './app';
 
-export function hello(world = "testworl"): string {
-  return `Hello ${world}! `;
-}
+app.listen(3000, () => {
+  console.log("Express server running on port 3000");
+});
