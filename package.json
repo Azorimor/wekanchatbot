@@ -4,6 +4,8 @@
   "description": "A chatbot for wekan integration into synology chat. (Other Plattforms can be added later)",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/index.js",
     "test": "jest --forceExit --coverage --verbose --detectOpenHandles",
     "start:tsc": "tsc && node ./dist/index.js",
     "start:dev": "nodemon ./src/index.ts",
