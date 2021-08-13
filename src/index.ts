@@ -1,6 +1,7 @@
 import { PORT } from "./utils/config";
 import app from "./app";
+import logger from "./utils/logger";
 
 app.listen(PORT, () => {
-  console.log(`Express server running on port ${PORT}`);
+  logger.info(`Express server running on port ${PORT}`);
 });
