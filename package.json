@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:tsc": "tsc && node ./dist/index.js"
+    "start:tsc": "tsc && node ./dist/index.js",
+    "start:dev": "nodemon ./src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "homepage": "https://github.com/Azorimor/wekanchatbot#readme",
   "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.0",
     "typescript": "^4.3.5"
   }
 }
