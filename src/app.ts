@@ -13,8 +13,8 @@ app.use(logger({ logger: pino }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.json({info: "Chatbot started."});
+app.get("/", (req, res) => {
+  res.json({ info: "Chatbot started." });
 });
 
 export default app;
