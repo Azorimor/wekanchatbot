@@ -3,11 +3,11 @@ version: "3.9"
 # Command: curl -o docker-compose.wekan.yml https://raw.githubusercontent.com/wekan/wekan/master/docker-compose.yml
 services: 
   # This mongodb container is used for the chatbot
-  # Connectionuri: mongodb://admin:securePassword@localhost:27017/wekanbot
+  # Connectionuri: mongodb://admin:securePassword@localhost:27018/wekanbot
   mongodb:
     image: mongo
     ports: 
-      - 27017:27017
+      - 27018:27017
     volumes: 
       - mongodb:/data/db
     # environment: 
