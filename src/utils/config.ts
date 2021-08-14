@@ -22,3 +22,4 @@ export const MONGO_URI =
   process.env.MONGO_URI ||
   // "mongodb://admin:securePassword@localhost:27017/wekanbot";
   "mongodb://localhost:27017/wekanbot";
+export const LOG_MONGO = process.env.LOG_MONGO === "true";
