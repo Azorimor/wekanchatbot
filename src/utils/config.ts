@@ -20,6 +20,9 @@ export const LOG_LEVEL = process.env.LOG_LEVEL || "debug";
 export const PORT = process.env.PORT || 3000;
 export const MONGO_URI =
   process.env.MONGO_URI ||
-  // "mongodb://admin:securePassword@localhost:27017/wekanbot";
-  "mongodb://localhost:27017/wekanbot";
+  // "mongodb://admin:securePassword@localhost:27018/wekanbot";
+  "mongodb://localhost:27018/wekanbot";
 export const LOG_MONGO = process.env.LOG_MONGO === "true";
+export const SYNOLOGY_BOT_INCOMING_URL =
+  process.env.SYNOLOGY_BOT_INCOMING_URL ||
+  "https://172.12.0.1/webapi/entry.cgi?api=SYNO.Chat.External&method=incoming&version=2&token=YOUR_TOKEN";
