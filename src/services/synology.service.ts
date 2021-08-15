@@ -12,7 +12,7 @@ export class SynologyService {
 
     const config: AxiosRequestConfig = {
       method: "post",
-      url: SYNOLOGY_BOT_INCOMING_URL,
+      url: this.url,
       headers: {
         "Content-Type": "text/plain",
       },
