@@ -39,6 +39,7 @@ jobs:
         uses: supercharge/mongodb-github-action@1.6.0
         with:
           mongodb-version: "4.4"
+          mongodb-port: 27018
       - name: Jest
         run: |
           npm run test
