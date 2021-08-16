@@ -26,3 +26,6 @@ export const LOG_MONGO = process.env.LOG_MONGO === "true";
 export const SYNOLOGY_BOT_INCOMING_URL =
   process.env.SYNOLOGY_BOT_INCOMING_URL ||
   "https://172.12.0.1/webapi/entry.cgi?api=SYNO.Chat.External&method=incoming&version=2&token=YOUR_TOKEN";
+export const WEKAN_USERNAME = process.env.WEKAN_USERNAME || "SynologyChatBot";
+export const WEKAN_PASSWORD = process.env.WEKAN_PASSWORD || "securePassword";
+export const WEKAN_BASE_URL = process.env.WEKAN_BASE_URL || "http://127.0.0.1";
