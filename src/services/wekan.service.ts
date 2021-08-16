@@ -11,7 +11,7 @@ export class WekanService {
   wekanUser = {
     id: "",
     token: "",
-    tokenExpires: Date.now(),
+    tokenExpires: Date.now().toString(),
   };
 
   config: AxiosRequestConfig = {
@@ -20,6 +20,7 @@ export class WekanService {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
       Accept: "*/*",
+      Authentication: this.wekanUser.token,
     },
     httpsAgent: new https.Agent({
       rejectUnauthorized: false,
@@ -28,7 +29,7 @@ export class WekanService {
 
   axiosInstance = axios.create(this.config);
 
-  async getToken(): Promise<void> {
+  async login(): Promise<void> {
     const payload = {
       username: WEKAN_USERNAME,
       password: WEKAN_PASSWORD,
@@ -37,6 +38,8 @@ export class WekanService {
     try {
       const response = await this.axiosInstance.post("/users/login", payload);
       this.wekanUser = response.data;
+      // Recreate instance with valid authentication token.
+      this.axiosInstance = axios.create(this.config);
       logger.info({ message: "Wekan successfully authenticated." });
     } catch (error) {
       logger.error({
