@@ -3,31 +3,37 @@ import app from "./app";
 import logger from "./utils/logger";
 import connection from "./utils/connection";
 import i18next from "i18next";
-import en from "../locales/en.json";
-import de from "../locales/de.json";
+import Backend from "i18next-fs-backend";
+
+import { join } from "path";
+import { readdirSync, lstatSync } from "fs";
 
 connection
-  .then(() => {
+  .then(async () => {
     logger.info("Connected to MongoDB");
-    i18next.init(
+    await i18next.use(Backend).init(
       {
+        backend: {
+          loadPath: join(__dirname, "../locales/{{lng}}/{{ns}}.json"),
+        },
+        ns: ["translation"],
+        defaultNS: "translation",
         lng: DEFAULT_LANGUAGE,
         debug: !PROD,
         initImmediate: false,
         fallbackLng: "en",
-        resources: {
-          en,
-          de,
-        },
+        preload: readdirSync(join(__dirname, "../locales")).filter(
+          (fileName) => {
+            const joinedPath = join(join(__dirname, "../locales"), fileName);
+            const isDirectory = lstatSync(joinedPath).isDirectory();
+            return isDirectory;
+          }
+        ),
       },
-      (error) => {
-        logger.info({
-          message: `Language loaded (${DEFAULT_LANGUAGE}).`,
-          metadata: { error: error, language: DEFAULT_LANGUAGE },
-        });
+      (err, t) => {
+        console.log(err);
       }
     );
-
     app.listen(PORT, () => {
       logger.info(`Express server running on port ${PORT}`);
     });
