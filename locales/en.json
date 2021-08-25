@@ -1,0 +1,8 @@
+{
+  "messages": {
+    "initial": {
+      "knownUser": "Hey, what can I do for you?", 
+      "unknownUser": "Hey, to get started you need to link your chat account to your wekan account. Do you want to start this process?"
+    }
+  }
+}
