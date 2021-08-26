@@ -1,5 +1,6 @@
 import { Router } from "express";
 import wekanRouter from "./wekan.router";
+import synologyRouter from "./synology.router";
 import i18next from "i18next";
 
 const router = Router();
@@ -9,5 +10,6 @@ router.get("/", (req, res) => {
 });
 
 router.use("/wekan", wekanRouter);
+router.use("/synology", synologyRouter);
 
 export default router;

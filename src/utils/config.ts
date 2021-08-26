@@ -31,3 +31,5 @@ export const WEKAN_PASSWORD = process.env.WEKAN_PASSWORD || "securePassword";
 export const WEKAN_BASE_URL = process.env.WEKAN_BASE_URL || "http://127.0.0.1";
 export const WEKAN_TOKEN = process.env.WEKAN_TOKEN || "";
 export const DEFAULT_LANGUAGE = process.env.DEFAULT_LANGUAGE || "en";
+export const SYNOLOGY_BOT_TOKEN =
+  process.env.SYNOLOGY_BOT_TOKEN || "YOUT_TOKEN";
