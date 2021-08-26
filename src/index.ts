@@ -4,7 +4,7 @@ import logger from "./utils/logger";
 import connection from "./utils/connection";
 
 connection
-  .then(() => {
+  .then(async () => {
     logger.info("Connected to MongoDB");
     app.listen(PORT, () => {
       logger.info(`Express server running on port ${PORT}`);
