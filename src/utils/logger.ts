@@ -22,6 +22,7 @@ const getTransports = (): winston.transport[] => {
           useNewUrlParser: true,
           useUnifiedTopology: true,
         },
+        metaKey: "meta",
       })
     );
   }
