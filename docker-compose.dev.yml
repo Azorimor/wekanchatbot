@@ -6,6 +6,7 @@ services:
   # Connectionuri: mongodb://admin:securePassword@localhost:27018/wekanbot
   mongodb:
     image: mongo
+    restart: unless-stopped
     ports: 
       - 27018:27017
     volumes: 
