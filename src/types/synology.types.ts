@@ -23,3 +23,13 @@ export type SynologyBotOutgoing = {
   timestamp: string;
   text: string;
 };
+
+export type SynologyBotMessage = {
+  text: string;
+  user: {
+    user_id?: string;
+    username: string;
+  };
+  actions: string[];
+  token: string;
+};
