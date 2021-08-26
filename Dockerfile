@@ -2,7 +2,9 @@
 FROM node:14-alpine as builder
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 WORKDIR /home/node/app
-COPY package*.json ./
+COPY package*.json ./ 
+COPY locales/ ./locales/
+RUN echo $(ls -a /home/node/app/*)
 
 # RUN npm config set unsafe-perm true
 # RUN npm install -g typescript
@@ -24,6 +26,7 @@ ENV NODE_ENV production
 
 RUN npm install --production
 COPY --from=builder /home/node/app/dist ./dist
+COPY --from=builder /home/node/app/locales/ ./locales/
 
 # COPY --chown=node:node .env .
 
