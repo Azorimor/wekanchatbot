@@ -10,7 +10,7 @@ switch (process.env.NODE_ENV) {
     path = `${__dirname}/../../.env`;
     break;
   default:
-    path = `${__dirname}/../../.env.development`;
+    path = `${__dirname}/../../.env.dev`;
 }
 dotenv.config({ path: path });
 

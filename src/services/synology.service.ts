@@ -31,7 +31,8 @@ export class SynologyService {
   async sendMessaage(data: SynologyBotMessage): Promise<void> {
     const payload = "payload=" + JSON.stringify(data);
 
-    const config: AxiosRequestConfig = { // TODO make one config
+    const config: AxiosRequestConfig = {
+      // TODO make one config
       method: "post",
       url: this.url,
       headers: {
@@ -42,5 +43,5 @@ export class SynologyService {
         rejectUnauthorized: false, // FIXME: Add proper https support.
       }),
     };
-  };
+  }
 }
